@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Welcome Screen -->
+    <div class="section" id="homeSection">
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966485.png" class="icon">
+        <h1>Health Assistant</h1>
+        <p>Your quick health checker</p>
+        <button class="start-btn" onclick="startApp()">Start</button>
+    </div>
+
+    <!-- Age Section -->
+    <div class="section hidden" id="ageSection">
+        <h2>Select Age Group</h2>
+        <button onclick="selectAge('child')">Child (0-12)</button>
+        <button onclick="selectAge('adult')">Adult (13-59)</button>
+        <button onclick="selectAge('elder')">Elder (60+)</button>
+    </div>
+
+    <!-- Symptoms Section -->
+    <div class="section hidden" id="symptomSection">
+        <h2>Select Symptoms</h2>
+
+        <div class="buttons">
+            <button onclick="toggleSymptom(this,'fever')">Fever</button>
+            <button onclick="toggleSymptom(this,'cold')">Cold</button>
+            <button onclick="toggleSymptom(this,'cough')">Cough</button>
+            <button onclick="toggleSymptom(this,'headache')">Headache</button>
+            <button onclick="toggleSymptom(this,'bodypain')">Body Pain</button>
+        </div>
+
+        <input type="text" id="searchSymptom" placeholder="Type other symptoms">
+
+        <button class="check-btn" onclick="checkResult()">Check Result</button>
+    </div>
+
+    <!-- Result Section -->
+    <div class="section hidden" id="resultSection">
+
+        <h2>🩺 Diagnosis Result</h2>
+
+        <h3>Disease</h3>
+        <p id="disease"></p>
+
+        <h3>Recommended Medicines</h3>
+        <ul id="medicines"></ul>
+
+        <button class="exit-btn" onclick="restartApp()">Exit / Use Again</button>
+
+        <h3>Note</h3>
+        <p id="note"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
